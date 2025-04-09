@@ -12,7 +12,7 @@ const Timer = () => {
   useEffect(() => {
     setDiffSet(seconds);
   }, [seconds]);
-  let diff = diffSec === seconds;
+  //let diff = diffSec === seconds;
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -23,11 +23,42 @@ const Timer = () => {
 
   //console.log(time);
   return (
-    <section className="flex gap-8">
-      <div className="bg-red-500 w-32 h-26">
-        <div>3</div>
-      </div>
-    </section>
+    <main className="flex gap-[30px] font-sans mt-10 ">
+      {/* countdown */}
+      <main className="text-[30px] text-center">
+        {" "}
+        {/* time section */}
+        <section>
+          {/* time group */}
+          <div className="font-black text-[100px] w-[100px] block">
+            {/* time segment */}
+            <article className="relative h-[100%]">
+              {/* segment display */}
+              <div className="relative overflow-hidden text-center w-[100%] h-[50%] bg-black text-[#eee] leading-24">
+                30
+              </div>
+              {/* segment display top */}
+              <div className="relative overflow-hidden text-center w-[100%] h-[50%] bg-[#333] text-white leading-0">
+                30
+              </div>
+              {/* segment display bottom */}
+              <div className="absolute top-0 h-[100px] w-[100px] perspective-[400px]">
+                {/* segment overlay */}
+                <div className="absolute overflow-hidden text-center w-[100%] h-[50%] top-0 leading-24 text-[#eee] bg-black animate-flip-top origin-bottom">
+                  30
+                </div>
+                {/* segment overlay top */}
+                <div className="absolute overflow-hidden text-center w-[100%] h-[50%] bottom-0 leading-0 text-white bg-[#333] animate-flip-bottom border-t-black origin-top">
+                  30
+                </div>
+                {/* segment overlay bottom  */}
+              </div>
+            </article>
+          </div>
+        </section>
+        <p>seconds</p>
+      </main>
+    </main>
   );
 };
 
