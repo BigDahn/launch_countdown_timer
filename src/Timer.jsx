@@ -4,6 +4,7 @@ const number = 777290;
 const Timer = () => {
   const [time, setTime] = useState(number);
   const [diffSec, setDiffSet] = useState(time % 60);
+  const [diffMins, setDiffMins] = useState(Math.floor(time / 60) % 60);
   const days = Math.floor(time / 86400);
   const hours = Math.floor(time / 3600) % 24;
   const minutes = Math.floor(time / 60) % 60;
@@ -12,7 +13,13 @@ const Timer = () => {
   useEffect(() => {
     setDiffSet(seconds);
   }, [seconds]);
-  //let diff = diffSec === seconds;
+
+  useEffect(() => {
+    setDiffMins(minutes);
+  }, [minutes]);
+
+  let min = diffMins === minutes;
+  let diff = diffSec === seconds;
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -23,33 +30,152 @@ const Timer = () => {
 
   //console.log(time);
   return (
-    <main className="flex gap-[30px] font-sans mt-10 ">
+    <main className="flex gap-[30px] font-serif mt-10 ">
       {/* countdown */}
       <main className="text-[30px] text-center">
         {" "}
         {/* time section */}
         <section>
           {/* time group */}
-          <div className="font-black text-[100px] w-[100px] block">
+          <div className="font-black text-[70px] w-[100px] block">
             {/* time segment */}
-            <article className="relative h-[100%]">
+            <article className="relative h-[100%] overflow-hidden">
               {/* segment display */}
-              <div className="relative overflow-hidden text-center w-[100%] h-[50%] bg-black text-[#eee] leading-24">
-                30
+              <div className="relative overflow-hidden text-center w-[100%] h-[50%] bg-black text-[#eee] leading-[1.5]">
+                {days}
               </div>
               {/* segment display top */}
-              <div className="relative overflow-hidden text-center w-[100%] h-[50%] bg-[#333] text-white leading-0">
-                30
+              <div className="relative overflow-hidden text-center w-[100%] h-[50%] bg-[#333] text-white leading-[0]">
+                {days}
               </div>
               {/* segment display bottom */}
-              <div className="absolute top-0 h-[100px] w-[100px] perspective-[400px]">
+              <div className="absolute top-0 h-[105px] w-[100px] perspective-[400px]">
                 {/* segment overlay */}
-                <div className="absolute overflow-hidden text-center w-[100%] h-[50%] top-0 leading-24 text-[#eee] bg-black animate-flip-top origin-bottom">
-                  30
+                <div className="absolute overflow-hidden text-center w-[100%] h-[50%] top-0 leading-[1.5] text-[#eee] bg-black animate-flip-top origin-bottom">
+                  {days}
                 </div>
                 {/* segment overlay top */}
-                <div className="absolute overflow-hidden text-center w-[100%] h-[50%] bottom-0 leading-0 text-white bg-[#333] animate-flip-bottom border-t-black origin-top">
-                  30
+                <div className="absolute overflow-hidden text-center w-[100%] h-[50%] bottom-0  leading-[0] text-white bg-[#333] animate-flip-bottom origin-top">
+                  {days}
+                </div>
+                {/* segment overlay bottom  */}
+              </div>
+            </article>
+          </div>
+        </section>
+        <p>Days</p>
+      </main>
+      <main className="text-[30px] text-center">
+        {" "}
+        {/* time section */}
+        <section>
+          {/* time group */}
+          <div className="font-black text-[70px] w-[100px] block">
+            {/* time segment */}
+            <article className="relative h-[100%] overflow-hidden">
+              {/* segment display */}
+              <div className="relative overflow-hidden text-center w-[100%] h-[50%] bg-black text-[#eee] leading-[1.5]">
+                {hours}
+              </div>
+              {/* segment display top */}
+              <div className="relative overflow-hidden text-center w-[100%] h-[50%] bg-[#333] text-white leading-[0]">
+                {hours}
+              </div>
+              {/* segment display bottom */}
+              <div className="absolute top-0 h-[105px] w-[100px] perspective-[400px] overflow-hidden">
+                {/* segment overlay */}
+                <div className="absolute overflow-hidden text-center w-[100%] h-[50%] top-0 leading-[1.5] text-[#eee] bg-black animate-flip-top origin-bottom">
+                  {hours}
+                </div>
+                {/* segment overlay top */}
+                <div className="absolute overflow-hidden text-center w-[100%] h-[50%] bottom-0  leading-[0] text-white bg-[#333] animate-flip-bottom origin-top">
+                  {hours}
+                </div>
+                {/* segment overlay bottom  */}
+              </div>
+            </article>
+          </div>
+        </section>
+        <p>Hours</p>
+      </main>
+      <main className="text-[30px] text-center">
+        {" "}
+        {/* time section */}
+        <section>
+          {/* time group */}
+          <div className="font-black text-[70px] w-[100px] block">
+            {/* time segment */}
+            <article className="relative h-[100%] overflow-hidden">
+              {/* segment display */}
+              <div className="relative overflow-hidden text-center w-[100%] h-[50%] bg-black text-[#eee] leading-[1.5] ">
+                {minutes}
+              </div>
+              {/* segment display top */}
+              <div className="relative overflow-hidden text-center w-[100%] h-[50%] bg-[#333] text-white leading-[0]">
+                {minutes}
+              </div>
+              {/* segment display bottom */}
+              <div className="absolute top-0 h-[105px] w-[100px] perspective-[400px] overflow-hidden">
+                {/* segment overlay */}
+                <div
+                  className={`${
+                    min &&
+                    "absolute overflow-hidden text-center w-[100%] h-[50%] top-0 leading-[1.5] text-[#eee] bg-black animate-flip-top origin-bottom"
+                  }`}
+                >
+                  {minutes}
+                </div>
+                {/* segment overlay top */}
+                <div
+                  className={`${
+                    min &&
+                    "absolute overflow-hidden text-center w-[100%] h-[50%] bottom-0  leading-[0] text-white bg-[#333] animate-flip-bottom origin-top"
+                  }`}
+                >
+                  {minutes}
+                </div>
+                {/* segment overlay bottom  */}
+              </div>
+            </article>
+          </div>
+        </section>
+        <p>Minutes</p>
+      </main>
+      <main className="text-[30px] text-center">
+        {" "}
+        {/* time section */}
+        <section>
+          {/* time group */}
+          <div className="font-black text-[70px] w-[100px] block">
+            {/* time segment */}
+            <article className="relative h-[100%] overflow-hidden">
+              {/* segment display */}
+              <div className="relative overflow-hidden text-center w-[100%] h-[50%] bg-[#111] text-[#eee] leading-[1.5]">
+                {seconds}
+              </div>
+              {/* segment display top */}
+              <div className="relative overflow-hidden text-center w-[100%] h-[50%] bg-[#333] text-white leading-[0]">
+                {seconds}
+              </div>
+              {/* segment display bottom */}
+              <div className="absolute top-0 h-[105px] w-[100px] perspective-[400px] overflow-hidden">
+                {/* segment overlay */}
+                <div
+                  className={`${
+                    diff &&
+                    "absolute overflow-hidden text-center w-[100%] h-[50%] top-0 leading-[1.5] text-[#eee] bg-black animate-flip-top origin-bottom"
+                  }`}
+                >
+                  {seconds}
+                </div>
+                {/* segment overlay top */}
+                <div
+                  className={`${
+                    diff &&
+                    "absolute overflow-hidden text-center w-[100%] h-[50%] bottom-0  leading-[0] text-white bg-[#333] animate-flip-bottom origin-top "
+                  }`}
+                >
+                  {seconds}
                 </div>
                 {/* segment overlay bottom  */}
               </div>
