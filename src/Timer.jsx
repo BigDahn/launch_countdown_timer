@@ -150,11 +150,11 @@ const Timer = () => {
             {/* time segment */}
             <article className="relative h-[100%] overflow-hidden">
               {/* segment display */}
-              <div className="relative overflow-hidden text-center w-[100%] h-[50%] bg-[#111] text-[#eee] leading-[1.5]">
+              <div className="relative overflow-hidden text-center w-[100%] h-[50%] bg-[#2c2c44] text-[#d1506f] rounded-bl-md rounded-br-md rounded-tr-md rounded-tl-md leading-[1.5]">
                 {seconds}
               </div>
               {/* segment display top */}
-              <div className="relative overflow-hidden text-center w-[100%] h-[50%] bg-[#333] text-white leading-[0]">
+              <div className="relative overflow-hidden text-center w-[100%] h-[50%] bg-[#34364f] rounded-bl-md rounded-br-md text-[#fd5e86] leading-[0]">
                 {seconds}
               </div>
               {/* segment display bottom */}
@@ -162,8 +162,9 @@ const Timer = () => {
                 {/* segment overlay */}
                 <div
                   className={`${
-                    diff &&
-                    "absolute overflow-hidden text-center w-[100%] h-[50%] top-0 leading-[1.5] text-[#eee] bg-black animate-flip-top origin-bottom"
+                    diff
+                      ? "absolute overflow-hidden text-center w-[100%] h-[50%] top-0 leading-[1.5] text-[#d1506f] rounded-tr-md rounded-tl-md bg-[#2c2c44] animate-flip-top origin-bottom"
+                      : "absolute overflow-hidden text-center w-[100%] h-[50%] top-0 leading-[1.5] text-[#d1506f] rounded-tr-md rounded-tl-md bg-[#2c2c44] "
                   }`}
                 >
                   {seconds}
@@ -171,8 +172,9 @@ const Timer = () => {
                 {/* segment overlay top */}
                 <div
                   className={`${
-                    diff &&
-                    "absolute overflow-hidden text-center w-[100%] h-[50%] bottom-0  leading-[0] text-white bg-[#333] animate-flip-bottom origin-top "
+                    diff
+                      ? "absolute overflow-hidden text-center w-[100%] h-[50%] bottom-0  leading-[0] text-[#fd5e86] border-t-2 border-[#292b42]  rounded-br-md rounded-bl-md bg-[#34364f] animate-flip-bottom origin-top "
+                      : "absolute overflow-hidden text-center w-[100%] h-[50%] bottom-0  leading-[0] text-[#fd5e86] border-t-2 border-[#292b42] rounded-br-md rounded-bl-md bg-[#34364f]"
                   }`}
                 >
                   {seconds}
