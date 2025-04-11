@@ -42,14 +42,14 @@ const Timer = () => {
 
   //console.log(time);
   return (
-    <main className="flex gap-[30px] font-DM-SANS mt-10 ">
+    <main className="flex gap-[3px] justify-center md:gap-[30px] font-DM-SANS mt-10 ">
       {/* countdown */}
       <main className="text-[15px] uppercase font-bold text-center text-[#80809a] flex flex-col gap-3">
         {" "}
         {/* time section */}
         <section>
           {/* time group */}
-          <div class="w-[120px] h-[110px] text-center  text-[70px] text-white font-black">
+          <div class=" w-[90px] h-[100px]  md:w-[120px] md:h-[110px] text-center  md:text-[70px] text-white font-black">
             <div class="relative h-[100%] text-center overflow-hidden">
               <div class="bg-[#2c2c44] h-[50%] w-[100%] text-[#d64e71] leading-[1.57]  rounded-t-[10px] relative overflow-hidden">
                 {days < 10 ? `0${days}` : days}
@@ -89,7 +89,7 @@ const Timer = () => {
         {/* time section */}
         <section>
           {/* time group */}
-          <div class="w-[120px] h-[110px] text-center  text-[70px] text-white font-black">
+          <div class="w-[90px] h-[100px]  md:w-[120px] md:h-[110px] text-center  md:text-[70px] text-white font-black">
             <div class="relative h-[100%] text-center overflow-hidden">
               <div class="bg-[#2c2c44] h-[50%] w-[100%] text-[#d64e71] leading-[1.57]  rounded-t-[10px] relative overflow-hidden">
                 {hours < 10 ? `0${hours}` : hours}
@@ -129,20 +129,20 @@ const Timer = () => {
         {/* time section */}
         <section>
           {/* time group */}
-          <div class="w-[120px] h-[110px] text-center  text-[70px] text-white font-black">
+          <div class="w-[90px] h-[90px]  md:w-[120px] md:h-[110px] text-center  md:text-[70px] text-white font-black">
             <div class="relative h-[100%] text-center overflow-hidden">
-              <div class="bg-[#2c2c44] h-[50%] w-[100%] text-[#d64e71] leading-[1.57]  rounded-t-[10px] relative overflow-hidden">
+              <div class="bg-[#2c2c44] h-[50%] w-[100%] md:h-[50%] md:w-[100%] text-[#d64e71] leading-[6] md:leading-[1.57] rounded-t-[10px] relative overflow-hidden">
                 {minutes < 10 ? `0${minutes}` : minutes}
               </div>
-              <div class="bg-[#34364f] h-[50%] w-[100%] text-[#fc5d85] leading-[0] rounded-b-[10px] relative overflow-hidden">
+              <div class="bg-[#34364f]  h-[50%] w-[100%] md:h-[50%] md:w-[100%] text-[#fc5d85] leading-[0] md:leading-[0]  rounded-b-[10px] relative overflow-hidden">
                 {minutes < 10 ? `0${minutes}` : minutes}
               </div>
-              <section class="absolute h-[100%] top-0 text-center w-[120px] overflow-hidden">
+              <section class="h-[100%] w-[90px] md:h-[100%] top-0 text-center md:w-[120px] absolute overflow-hidden">
                 <div
                   className={`${
                     min
-                      ? "bg-[#2c2c44] w-[100%] absolute top-0 h-[50%] text-[#d64e71] leading-[1.57]  rounded-t-[10px] overflow-hidden animate-flip-top origin-bottom"
-                      : "bg-[#2c2c44] w-[100%] absolute top-0 h-[50%] text-[#d64e71] leading-[1.57]  rounded-t-[10px] overflow-hidden "
+                      ? "bg-[#2c2c44] w-[100%] absolute top-0 h-[50%] text-[#d64e71] leading-[6] md:leading-[1.57] rounded-t-[10px] overflow-hidden animate-flip-top origin-bottom"
+                      : "bg-[#2c2c44] w-[100%] absolute top-0 h-[50%] text-[#d64e71] leading-[6] md:leading-[1.57] rounded-t-[10px] overflow-hidden "
                   }`}
                 >
                   {minutes < 10 ? `0${minutes}` : minutes}
@@ -150,8 +150,8 @@ const Timer = () => {
                 <div
                   className={`${
                     min
-                      ? "bg-[#34364f] absolute h-[50%] w-[100%]  bottom-0 leading-[0] text-[#fc5d85]  rounded-b-[10px]  overflow-hidden animate-flip-bottom origin-top"
-                      : "bg-[#34364f] absolute h-[50%] w-[100%]  bottom-0 leading-[0] text-[#fc5d85] overflow-hidden  rounded-b-[10px]"
+                      ? "bg-[#34364f] absolute h-[50%] w-[100%]  bottom-0 leading-[0] md:leading-[0] text-[#fc5d85]  rounded-b-[10px]  overflow-hidden animate-flip-bottom origin-top"
+                      : "bg-[#34364f] absolute h-[50%] w-[100%]  bottom-0 leading-[0] md:leading-[0] text-[#fc5d85] overflow-hidden  rounded-b-[10px]"
                   }`}
                 >
                   {minutes < 10 ? `0${minutes}` : minutes}
@@ -168,20 +168,20 @@ const Timer = () => {
         {" "}
         {/* time section */}
         <section>
-          <div class="w-[120px] h-[110px] text-center  text-[70px] text-white font-black">
+          <div class="w-[90px] h-[90px]  md:w-[120px] md:h-[110px] text-center  md:text-[70px] text-white font-black">
             <div class="relative h-[100%] text-center overflow-hidden">
-              <div class="bg-[#2c2c44] h-[50%] w-[100%] text-[#d64e71] leading-[1.57]  rounded-t-[10px] relative overflow-hidden">
+              <div class="bg-[#2c2c44] h-[50%] w-[100%] md:h-[50%] md:w-[100%] text-[#d64e71] leading-[6] md:leading-[1.57]  rounded-t-[10px] relative overflow-hidden">
                 {seconds < 10 ? `0${seconds}` : seconds}
               </div>
-              <div class="bg-[#34364f] h-[50%] w-[100%] text-[#fc5d85] leading-[0] rounded-b-[10px] relative overflow-hidden">
+              <div class="bg-[#34364f]  h-[50%] w-[100%] md:h-[50%] md:w-[100%] text-[#fc5d85] leading-[0] md:leading-[0] rounded-b-[10px] relative overflow-hidden">
                 {seconds < 10 ? `0${seconds}` : seconds}
               </div>
-              <section class="absolute h-[100%] top-0 text-center w-[120px] overflow-hidden">
+              <section class="absolute h-[100%] w-[90px] md:h-[100%] top-0 text-center md:w-[120px] overflow-hidden">
                 <div
                   className={`${
                     diff
-                      ? "bg-[#2c2c44] w-[100%] absolute top-0 h-[50%] text-[#d64e71] leading-[1.57]  rounded-t-[10px] overflow-hidden animate-flip-top origin-bottom"
-                      : "bg-[#2c2c44] w-[100%] absolute top-0 h-[50%] text-[#d64e71] leading-[1.57]  rounded-t-[10px] overflow-hidden "
+                      ? "bg-[#2c2c44] w-[100%] absolute top-0 h-[50%] text-[#d64e71] leading-[6] md:leading-[1.57]  rounded-t-[10px] overflow-hidden animate-flip-top origin-bottom"
+                      : "bg-[#2c2c44] w-[100%] absolute top-0 h-[50%] text-[#d64e71] leading-[6] md:leading-[1.57]  rounded-t-[10px] overflow-hidden "
                   }`}
                 >
                   {seconds < 10 ? `0${seconds}` : seconds}
@@ -189,8 +189,8 @@ const Timer = () => {
                 <div
                   className={`${
                     diff
-                      ? "bg-[#34364f] absolute h-[50%] w-[100%]  bottom-0 leading-[0] text-[#fc5d85]  rounded-b-[10px]  overflow-hidden animate-flip-bottom origin-top"
-                      : "bg-[#34364f] absolute h-[50%] w-[100%]  bottom-0 leading-[0] text-[#fc5d85] overflow-hidden  rounded-b-[10px]"
+                      ? "bg-[#34364f] absolute h-[50%] w-[100%]  bottom-0 leading-[0] md:leading-[0] text-[#fc5d85]  rounded-b-[10px]  overflow-hidden animate-flip-bottom origin-top"
+                      : "bg-[#34364f] absolute h-[50%] w-[100%]  bottom-0  leading-[0] md:leading-[0] text-[#fc5d85] overflow-hidden  rounded-b-[10px]"
                   }`}
                 >
                   {seconds < 10 ? `0${seconds}` : seconds}
