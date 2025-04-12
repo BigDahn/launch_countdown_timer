@@ -89,20 +89,20 @@ const Timer = () => {
         {/* time section */}
         <section>
           {/* time group */}
-          <div class="w-[90px] h-[100px]  md:w-[120px] md:h-[110px] text-center  md:text-[70px] text-white font-black">
+          <div class="w-[90px] h-[90px]  md:w-[120px] md:h-[110px] text-center  md:text-[70px] text-white font-black">
             <div class="relative h-[100%] text-center overflow-hidden">
-              <div class="bg-[#2c2c44] h-[50%] w-[100%] text-[#d64e71] leading-[1.57]  rounded-t-[10px] relative overflow-hidden">
+              <div class="bg-[#2c2c44]  h-[50%] w-[100%] md:h-[50%] md:w-[100%] text-[#d64e71] leading-[6] md:leading-[1.57] rounded-t-[10px] relative overflow-hidden">
                 {hours < 10 ? `0${hours}` : hours}
               </div>
-              <div class="bg-[#34364f] h-[50%] w-[100%] text-[#fc5d85] leading-[0] rounded-b-[10px] relative overflow-hidden">
+              <div class="bg-[#34364f] h-[50%] w-[100%] md:h-[50%] md:w-[100%] text-[#fc5d85] leading-[0] md:leading-[0] rounded-b-[10px] relative overflow-hidden">
                 {hours < 10 ? `0${hours}` : hours}
               </div>
-              <section class="absolute h-[100%] top-0 text-center w-[120px] overflow-hidden">
+              <section class="absolute h-[100%] w-[90px] md:h-[100%] top-0 md:w-[120px] text-center overflow-hidden">
                 <div
                   className={`${
                     hrs
-                      ? "bg-[#2c2c44] w-[100%] absolute top-0 h-[50%] text-[#d64e71] leading-[1.57]  rounded-t-[10px] overflow-hidden animate-flip-top origin-bottom"
-                      : "bg-[#2c2c44] w-[100%] absolute top-0 h-[50%] text-[#d64e71] leading-[1.57]  rounded-t-[10px] overflow-hidden "
+                      ? "bg-[#2c2c44] w-[100%] absolute top-0 h-[50%] text-[#d64e71] leading-[6] md:leading-[1.57] rounded-t-[10px] overflow-hidden animate-flip-top origin-bottom"
+                      : "bg-[#2c2c44] w-[100%] absolute top-0 h-[50%] text-[#d64e71] leading-[6] md:leading-[1.57]  rounded-t-[10px] overflow-hidden "
                   }`}
                 >
                   {hours < 10 ? `0${hours}` : hours}
@@ -110,8 +110,8 @@ const Timer = () => {
                 <div
                   className={`${
                     hrs
-                      ? "bg-[#34364f] absolute h-[50%] w-[100%]  bottom-0 leading-[0] text-[#fc5d85]  rounded-b-[10px]  overflow-hidden animate-flip-bottom origin-top"
-                      : "bg-[#34364f] absolute h-[50%] w-[100%]  bottom-0 leading-[0] text-[#fc5d85] overflow-hidden  rounded-b-[10px]"
+                      ? "bg-[#34364f] absolute h-[50%] w-[100%]  bottom-0 leading-[0] md:leading-[0] text-[#fc5d85]  rounded-b-[10px]  overflow-hidden animate-flip-bottom origin-top"
+                      : "bg-[#34364f] absolute h-[50%] w-[100%]  bottom-0 leading-[0] md:leading-[0] text-[#fc5d85] overflow-hidden  rounded-b-[10px]"
                   }`}
                 >
                   {hours < 10 ? `0${hours}` : hours}
